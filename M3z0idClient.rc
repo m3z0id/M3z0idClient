@@ -19,7 +19,7 @@ BEGIN
       VALUE "OriginalFilename", "M3z0idClient.exe"
       VALUE "ProductName",      "M3z0id Client"
       VALUE "License",          "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-	  VALUE "ProductVersion",   "1.1.0\0"
+	  VALUE "ProductVersion",   "2.0.0\0"
 	  VALUE "LegalCopyright",   "(C) 2024 M3z0id All Rights Reserved\0"
     END
   END
