@@ -3,7 +3,7 @@ This is a command utility to confuse people when counting on Discord. ([counting
 ## Installation
 This project uses the [clip](https://github.com/dacap/clip) library (which is included) to copy the output to clipboard. This project uses [CMake](https://cmake.org/). You won't find an executable for Linux.
 ## Usage
-M3z0id Client currently has 5 modes - `1`, `69`, `random`, `subtract` and `set`.
+M3z0id Client currently has 6 modes - `1`, `69`, `random`, `subtract`, `set` and `add`.
 ### Modes `1`, `69`, `random`, `subtract` and `set`.
 The usage is: `M3z0idClient [--random-zeroes] <number> [1/69/random/subtract/set/add]`
 ### Mode `set`
