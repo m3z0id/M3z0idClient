@@ -13,7 +13,7 @@ int numberToConvert;
 bool randomZeroes = false;
 
 void help(char* exec) {
-	cout << "Usage: " << exec << " [--random-zeroes] <number> [1/69/random/subtract/add]\n";
+	cout << "Usage: " << exec << " [--random-zeroes] <number> [1/69/random/subtract/add/factorial]\n";
 	cout << "Usage: " << exec << " [--random-zeroes] <number> [set] <number1>...\n";
 }
 
@@ -66,11 +66,11 @@ int parseCommand(int argc, char* argv[], int& numberToConvert, int& mode, bool& 
 	else if (strcmp(argv[argIndex], "set") == 0) mode = SET;
 	else if (strcmp(argv[argIndex], "subtract") == 0) mode = SUBTRACT;
 	else if (strcmp(argv[argIndex], "add") == 0) mode = ADD;
+	else if (strcmp(argv[argIndex], "factorial") == 0) mode = FACTORIAL;
 	else {
 		help(argv[0]);
 		return -1;
 	}
-
 	return 0;
 }
 
@@ -144,6 +144,30 @@ string subtract(int input, bool randomZeroes) {
 	return output;
 }
 
+string factorial(int input, bool randomZeroes){
+	string output = "";
+	int cache = 1;
+	for (int i = 1;;i++) {
+		if (!(cache * i > input) || abs(input - (cache * i)) < abs(input - cache)) {
+			output += to_string(i) + "*";
+			cache *= i;
+			if (randomZero() && randomZeroes) {
+				output = output.substr(0, output.size() - 1);
+				output += "+0+";
+			}
+			continue;
+		}
+		break;
+	}
+	bool higherValInUse = cache > input;
+	if (cache != input) {
+		output = output.substr(0, output.size() - 1);
+		output += (higherValInUse ? "-" : "+") + to_string(abs(input - cache)) + "+";
+	}
+	if (input == 1) output = "1+";
+	return output;
+}
+
 string add(int input, bool randomZeroes) {
 	string output = "";
 	while (input > 0) {
@@ -158,7 +182,6 @@ string add(int input, bool randomZeroes) {
 int main(int argc, char* argv[]) {
 	string output = "";
 	if (parseCommand(argc, argv, numberToConvert, mode, randomZeroes) == -1) return -1;
-
 	switch (mode) {
 	case ONES:
 		output = ones(numberToConvert, randomZeroes);

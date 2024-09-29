@@ -4,5 +4,6 @@ enum mode {
     RANDOM,
     SET,
     SUBTRACT,
-    ADD
+    ADD,
+    FACTORIAL
 };
