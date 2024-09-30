@@ -4,7 +4,7 @@ This is a command utility to confuse people when counting on Discord. ([counting
 There's an executable for Windows only, **which is not guaranteed to be up to date**.
 So compiling from source is better.
 ## Usage
-M3z0id Client currently has 6 modes - `1`, `69`, `random`, `subtract`, `set`, `add` and `factorial`.
+M3z0id Client currently has 7 modes - `1`, `69`, `random`, `subtract`, `set`, `add` and `factorial`.
 ### Modes `1`, `69`, `random`, `subtract` and `set`.
 The usage is: `M3z0idClient [--random-zeroes] <number> [1/69/random/subtract/add/factorial]`
 Note that the flag `--random-zeroes` doesn't work with `factorial` mode.
