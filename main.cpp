@@ -151,10 +151,6 @@ string factorial(int input, bool randomZeroes){
 		if (!(cache * i > input) || abs(input - (cache * i)) < abs(input - cache)) {
 			output += to_string(i) + "*";
 			cache *= i;
-			if (randomZero() && randomZeroes) {
-				output = output.substr(0, output.size() - 1);
-				output += "+0+";
-			}
 			continue;
 		}
 		break;
